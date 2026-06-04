@@ -10,94 +10,113 @@ body {
     background-color: #ffffff;
     color: #333333;
     line-height: 1.4;
-    max-width: 450px; 
-    margin: 40px auto;
-    /* Increased bottom padding so the floating buttons don't cover your portfolio content */
-    padding: 25px 25px 80px 25px; 
-    border: 1px solid #e0ebe4;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(17, 87, 64, 0.05);
+    padding-bottom: 100px; /* Space for the floating buttons */
+}
+
+/* --- Top Navigation Bar --- */
+#topBar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Left (Title), Center (Total), Right (Time) */
+    align-items: center;
+    background-color: #f4f8f5; 
+    border-bottom: 1px solid #e0ebe4;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+}
+
+/* Title inside Top Bar (The Green Circle from your screenshot) */
+#myh1 {
+    font-size: 1.25rem;
+    color: #115740; /* Pakistan Green */
+    text-align: left; 
+    margin: 0; 
+}
+
+/* Center Total */
+#totalPortfolioValue {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #115740; 
+    text-align: center;
+}
+
+/* Right Time (The Red Circle from your screenshot) */
+#currentTime {
+    font-size: 0.9rem;
+    color: #5a6b61;
+    text-align: right; 
 }
 
 /* Headings */
-h1 {
-    font-size: 1.4rem;
-    color: #115740; /* Pakistan Flag Green */
-    text-align: center;
-    margin-bottom: 4px;
-}
-
 h2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #5a6b61;
     text-align: center;
     font-weight: normal;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     border-bottom: 1px solid #e0ebe4;
     padding-bottom: 15px;
+    max-width: 600px; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Dynamic Portfolio Container */
 #portfolioContainer {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    padding: 0 30px;
+    max-width: 900px; 
+    margin: 0 auto; 
 }
 
-/* Injected Stock Details */
+/* Individual Stock Cards (Light Green Background) */
+#portfolioContainer div {
+    background-color: #eaf2ed; /* Very light shade of green */
+    border: 1px solid #d4e3d9; /* Subtle green border */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(17, 87, 64, 0.03);
+}
+
 h3 {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     color: #115740;
-    margin-bottom: 4px;
-    border-left: 3px solid #115740;
-    padding-left: 8px;
+    margin-bottom: 8px;
+    border-left: 4px solid #115740;
+    padding-left: 12px;
 }
 
 p {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: #555555;
-    margin-bottom: 3px;
-    padding-left: 11px;
+    margin-bottom: 5px;
+    padding-left: 16px;
 }
 
-/* Line Breaks and Divider */
-br {
-    display: none;
-}
-
-hr {
-    border: 0;
-    height: 1px;
-    background: #e0ebe4;
-    margin: 20px 0 15px 0;
-}
-
-/* Bottom Controls */
-label {
-    display: block;
-    font-size: 0.85rem;
-    color: #5a6b61;
-    text-align: center;
-    margin-bottom: 12px;
+/* Hide Old Spacing Elements */
+br, hr, label {
+    display: none; 
 }
 
 /* Shared Bubble Button Styles */
 button {
-    position: fixed; /* Detaches them from the card and locks them to the screen */
-    bottom: 25px;
-    padding: 12px 20px;
-    border-radius: 30px; /* Gives the "bubble" / pill shape */
-    font-size: 0.85rem;
+    position: fixed; 
+    bottom: 30px;
+    padding: 14px 24px;
+    border-radius: 30px; 
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Floating shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
     transition: all 0.2s ease;
-    z-index: 1000; /* Ensures they stay on top of other content */
+    z-index: 1000; 
 }
 
 /* Primary Bubble (Add/Update) - Bottom Left */
 #button {
-    left: 25px;
+    left: 30px;
     background-color: #115740;
     color: #ffffff;
     border: none;
@@ -105,13 +124,13 @@ button {
 
 #button:hover {
     background-color: #0c4230;
-    transform: translateY(-3px); /* Subtle lift effect on hover */
-    box-shadow: 0 6px 15px rgba(17, 87, 64, 0.3); /* Enhanced green shadow on hover */
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 15px rgba(17, 87, 64, 0.3); 
 }
 
 /* Secondary Bubble (Delete) - Bottom Right */
 #deleteButton {
-    right: 25px;
+    right: 30px;
     background-color: #ffffff;
     color: #c9302c;
     border: 1px solid #c9302c;
@@ -119,6 +138,6 @@ button {
 
 #deleteButton:hover {
     background-color: #fff0f0;
-    transform: translateY(-3px); /* Subtle lift effect on hover */
-    box-shadow: 0 6px 15px rgba(201, 48, 44, 0.2); /* Enhanced red shadow on hover */
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 15px rgba(201, 48, 44, 0.2); 
 }
