@@ -1,4 +1,4 @@
-// 1. Initialize the empty portfolio array (This was missing!)
+
 const portfolio = [];
 
 // 2. Define the StockPosition class
